@@ -8,10 +8,11 @@
 
 
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests_03: XCTestCase {
 
-    /*var giantSalmon = GiantSalmon()
+    var giantSalmon = GiantSalmon()
     var giantTuna = GiantTuna()
 
     override func setUp() {
@@ -69,6 +70,6 @@ class Ocean_SwiftTests_03: XCTestCase {
         let expected = 25
         
         XCTAssertEqual(expected,result, "giant tuna's value is $25")
-    }*/
+    }
 
 }

@@ -8,6 +8,7 @@
 
 
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests_06: XCTestCase {
     
@@ -16,7 +17,9 @@ class Ocean_SwiftTests_06: XCTestCase {
     */
     
     var sub:Submarine = Submarine()
-    
+    var normal:Captain = Captain(captainType: Captain.CaptainType.Normal)
+    var ocean:Ocean = Ocean()
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -30,8 +33,10 @@ class Ocean_SwiftTests_06: XCTestCase {
     func testSubHasEmptyCargo() {
        
         /* at initalization sub should have empty cargo. Test that the count of cargo items is 0 */
+        let result = self.sub.cargo.count;
+        let expected = 0
         
-        XCTAssertTrue(false)
+        XCTAssertEqual(result, expected, "Cargo should be empty initially")
         
     }
     
@@ -39,15 +44,32 @@ class Ocean_SwiftTests_06: XCTestCase {
         
         /* count of cargo after submarine picks up a fish at depth = 1, tile = 3 is 1.
             Test that the count of cargo items is 0 */
+        self.sub.captainDelegate = normal
+        let fish = self.sub.goFish(ocean, depth: 1, tile: 4)
+        let result = self.sub.cargo.count
+        let expected = 1
         
-        XCTAssertTrue(false)
+        XCTAssertEqual(result, expected, "Cargo should have one item after catching one fish")
     }
     
     func testSubGoesFishingCorrectly() {
         
         /* submarine's cargo initially contains a Giant Tuna and then navigates to the giant salmon at depth = 2, tile = 1. 
         Test that in cargo[0] is a Giant Tuna and in cargo[1] is a Giant Salmon */
+        self.sub.captainDelegate = normal
+        self.sub.cargo += [GiantTuna()]
+        self.sub.goFish(ocean, depth: 2, tile: 2)
         
-        XCTAssertTrue(false)
+        let tuna = self.sub.cargo[0] as? GiantTuna
+        let salmon = self.sub.cargo[1] as? GiantSalmon
+        
+        XCTAssertNotNil(tuna, "The first slot should have a GiantTuna")
+        XCTAssertNotNil(salmon, "The first slot should have a GiantSalmon")
+
     }
 }
+
+
+
+
+

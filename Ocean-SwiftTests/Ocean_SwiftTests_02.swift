@@ -7,10 +7,11 @@
 //
 
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests_02: XCTestCase {
 
-    /*var fish1 = Fish(weigth: 1, value: 15)
+    var fish1 = Fish(weigth: 1, value: 15)
     var fish2 = Fish(weigth: 3, value: 25)
     
     override func setUp() {
@@ -53,5 +54,5 @@ class Ocean_SwiftTests_02: XCTestCase {
         let expected = 25
         
         XCTAssertEqual(expected,result, "fish2 should value $25")
-    }*/
+    }
 }

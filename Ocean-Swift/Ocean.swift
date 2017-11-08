@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 com.lighthouse-labs. All rights reserved.
 //
 
-struct Ocean {
+class Ocean {
     
     static let kMAX_DEPTH = 4
     static let kMAX_TILE = 5
@@ -32,6 +32,22 @@ struct Ocean {
         (3,1,.salmon),(3,2,.empty),(3,3,.empty),(3,4,.tuna),(3,5,.empty), //Depth3
         (4,1,.empty),(4,2,.empty),(4,3,.empty),(4,4,.tuna),(4,5,.empty)] //Depth4
     
-                    /* => => Forward direction => => */
-
+                    /* => => Forward direction => => */ 
+    
+    func fishAt(depth:Int, tile:Int) -> Fish? {
+        
+        for (thisDepth, thisTile, thisFishType) in board {
+            if thisDepth == depth && thisTile == tile {
+                switch thisFishType {
+                case .empty:
+                    return nil
+                case .salmon:
+                    return GiantSalmon()
+                case .tuna:
+                    return GiantTuna()
+                }
+            }
+        }
+        return nil
+    }
 }

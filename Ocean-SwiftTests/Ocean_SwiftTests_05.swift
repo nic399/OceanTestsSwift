@@ -8,10 +8,11 @@
 
 
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests_05: XCTestCase {
 
-    /*var sub:Submarine = Submarine()
+    var sub:Submarine = Submarine()
     var ocean:Ocean = Ocean()
     var normal:Captain = Captain(captainType: Captain.CaptainType.Normal)
     var drunky:Captain = Captain(captainType: Captain.CaptainType.Drunk)
@@ -39,27 +40,27 @@ class Ocean_SwiftTests_05: XCTestCase {
     }
 
     func testDrunkCaptianCannotFindGiantSalmon() {
-        
+
         self.sub.captainDelegate = drunky
         let fish = self.sub.goFish(ocean, depth: 1, tile: 4) as! GiantSalmon?
         XCTAssertNil(fish, "a drunk captain cannot find a giant salmon even on a tile that contains a giant salmon")
-        
+
     }
-    
+
     func testNormalCaptianFindsGiantTuna() {
-        
+
         self.sub.captainDelegate = normal
         let fish = self.sub.goFish(ocean, depth: 2, tile: 1) as! GiantTuna?
         XCTAssertNotNil(fish, "a normal captain finds a giant tuna on a tile that contains a giant tuna")
-        
+
     }
-    
+
     func testNormalCaptianCannotFindFishIfEmptyTile() {
-        
+
         self.sub.captainDelegate = normal
         let fish = self.sub.goFish(ocean, depth: 1, tile: 1) as! GiantTuna?
         XCTAssertNil(fish, "if the tile is empty, even a normal captain cannot find a fish")
-        
-    }*/
+
+    }
 
 }

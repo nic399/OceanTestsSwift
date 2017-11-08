@@ -8,6 +8,7 @@
 
 import UIKit
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests: XCTestCase {
     
@@ -21,7 +22,7 @@ class Ocean_SwiftTests: XCTestCase {
         XCTAssertEqual(expected,result, "sub's inital depth should be at the SURFACE (0)")
     }
     
-    /*func testSubInitalDive() {
+    func testSubInitalDive() {
         
         sub.dive()
         let result = sub.depth
@@ -108,5 +109,5 @@ class Ocean_SwiftTests: XCTestCase {
         
         XCTAssertEqual(expected,result, "ascend only works if the submarine is under water and not directly under the surface")
         
-    }*/
+    }
 }

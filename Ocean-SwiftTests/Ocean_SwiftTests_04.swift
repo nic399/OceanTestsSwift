@@ -8,10 +8,11 @@
 
 
 import XCTest
+@testable import Ocean_Swift
 
 class Ocean_SwiftTests_04: XCTestCase {
 
-    /*var sub = Submarine()
+    var sub = Submarine()
     
     override func setUp() {
         super.setUp()
@@ -89,7 +90,7 @@ class Ocean_SwiftTests_04: XCTestCase {
         let expected = 0
         
         XCTAssertEqual(expected,result, "sub cannot move past the left edge of the ocean")
-    }*/
+    }
     
 
 }
