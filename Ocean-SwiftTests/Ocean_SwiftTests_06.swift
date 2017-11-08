@@ -45,7 +45,7 @@ class Ocean_SwiftTests_06: XCTestCase {
         /* count of cargo after submarine picks up a fish at depth = 1, tile = 3 is 1.
             Test that the count of cargo items is 0 */
         self.sub.captainDelegate = normal
-        let fish = self.sub.goFish(ocean, depth: 1, tile: 4)
+        self.sub.goFish(ocean, depth: 1, tile: 4)
         let result = self.sub.cargo.count
         let expected = 1
         
